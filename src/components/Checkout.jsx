@@ -20,6 +20,7 @@ export default function Checkout() {
 
   const clearCart = () => {
     localStorage.removeItem("myCart");
+    dispatch(emptyCartProducts());
   };
 
   return (

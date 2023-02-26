@@ -27,6 +27,12 @@ export const cartProducts = (cart) => {
   };
 };
 
+export const emptyCartProducts = () => {
+  return {
+    type: ActionTypes.EMPTY_CART_PRODUCTS,
+  };
+};
+
 // export const increaseQty = (itemId) => {
 //   return {
 //     type: ActionTypes.INCREASE_QTY,

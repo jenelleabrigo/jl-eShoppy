@@ -39,6 +39,8 @@ export const cartProductsReducer = (state = initialState, { type, payload }) => 
       }
       localStorage.setItem("myCart", JSON.stringify(newCart));
       return { ...state, cart: newCart };
+    case ActionTypes.EMPTY_CART_PRODUCTS:
+      return {};
     default:
       return state;
   }
