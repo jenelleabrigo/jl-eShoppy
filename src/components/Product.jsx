@@ -39,7 +39,7 @@ export default function Product({ category }) {
       {renderProducts.map((product) => {
         return (
           <div key={product.id} className="flex flex-col bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <img className="rounded-t-lg h-[12rem] md:h-[15rem] m-auto p-4" src={product.image} alt="" />
+            <img className="rounded-t-lg h-[12rem] md:h-[15rem] m-auto p-4" src={product.image} alt={product.title} loading="lazy" />{" "}
             <div className="p-5 grow flex flex-col justify-between">
               <h5 className="mb-2 grow text-lg break-words lg:text-xl xl:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{product.title}</h5>
               <div>

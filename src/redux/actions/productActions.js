@@ -33,16 +33,16 @@ export const emptyCartProducts = () => {
   };
 };
 
-// export const increaseQty = (itemId) => {
-//   return {
-//     type: ActionTypes.INCREASE_QTY,
-//     payload: itemId,
-//   };
-// };
+export const increaseQty = (item) => {
+  return {
+    type: ActionTypes.INCREASE_QTY,
+    payload: item,
+  };
+};
 
-// export const decreaseQty = (itemId) => {
-//   return {
-//     type: ActionTypes.DECREASE_QTY,
-//     payload: itemId,
-//   };
-// };
+export const decreaseQty = (item) => {
+  return {
+    type: ActionTypes.DECREASE_QTY,
+    payload: item,
+  };
+};

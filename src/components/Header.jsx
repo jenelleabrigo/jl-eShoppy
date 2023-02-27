@@ -28,7 +28,7 @@ export default function Header() {
             className="bg-primary rounded-full md:w-[1.5rem] md:h-[1.5rem] w-[1rem]
 h-[1rem] text-white border-2 border-secondary flex items-center justify-center absolute -right-[0.5rem] -top-[0.5rem] text-xs"
           >
-            {cartProducts.length}
+            {cartProducts?.length}
           </p>
           <img src={cart} alt="" className="md:w-auto w-[rem]" />
         </button>

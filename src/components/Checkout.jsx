@@ -14,10 +14,6 @@ export default function Checkout() {
       return a + b;
     }, 0);
 
-  const toggleCart = () => {
-    dispatch(toggle());
-  };
-
   const clearCart = () => {
     localStorage.removeItem("myCart");
     dispatch(emptyCartProducts());
@@ -32,7 +28,11 @@ export default function Checkout() {
         <p>Total</p>
       </div>
       {cartProduct.map((product) => (
-        <div key={product.id} className="p-4 w-full grid grid-cols-4 text-center items-center justify-center gap-x-6 [&:not(:last-child)]:border-b [&:not(:last-child)]:pb-4 hover:bg-gray-100">
+        <NavLink
+          to={`/product/${product.id}`}
+          key={product.id}
+          className="p-4 w-full grid grid-cols-4 text-center items-center justify-center gap-x-6 [&:not(:last-child)]:border-b [&:not(:last-child)]:pb-4 hover:bg-gray-100"
+        >
           <div className="max-w-[5rem]">
             <img className="rounded-t-lg" src={product.image} alt="" />
           </div>
@@ -45,16 +45,23 @@ export default function Checkout() {
           </div>
           <p>{product.quantity}x</p>
           <h3 className="font-bold">$ {product.price * product.quantity}</h3>
-        </div>
+        </NavLink>
       ))}
       <div className="w-full text-md text-right lg:text-l xl:text-xl font-bold tracking-tight text-primary dark:text-white p-4">
         <p>
           Total <span className="mx-8">${cartTotalPrice.toFixed(3)}</span>
         </p>
       </div>
-      <div className="text-right p-4 mx-8">
-        <NavLink to={`/success`} onClick={clearCart} className={`btn text-center text-sm mt-1 py-1 px-8 w-full ${cartProduct.length === 0 ? "opacity-50 pointer-events-none" : ""}`}>
+      <div className="text-right p-4 block md:flex items-center justify-between">
+        <NavLink
+          to={`/success`}
+          onClick={clearCart}
+          className={`order-2 btn text-center text-sm mt-1 py-1 px-8 w-full block md:inline-block md:w-auto ${cartProduct.length === 0 ? "opacity-50 pointer-events-none" : ""}`}
+        >
           Place Order
+        </NavLink>
+        <NavLink to={"/"} className="text-secondary block text-center mt-5 md:mt-0 md:text-left md:inline-block hover:text-primary transition duration-300">
+          ← Back to product list
         </NavLink>
       </div>
     </div>
