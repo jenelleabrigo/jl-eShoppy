@@ -33,7 +33,7 @@ export default function ProductDetail() {
   return (
     <div>
       {Object.keys(product).length === 0 ? (
-        <div className="text-center">Loading...</div>
+        <div className="text-center text-primary font-bold">Loading...</div>
       ) : (
         <div className="block lg:flex gap-x-16 max-w-fit m-auto">
           <div className="w-full h-full max-w-[10rem] mb-8 md:max-w-[15rem] mx-auto lg:m-0 lg:max-w-[20rem] lg:mb-0">

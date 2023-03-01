@@ -7,7 +7,8 @@ import { Dropdown } from "flowbite-react";
 
 export default function ProductList() {
   const [category, setCatergory] = useState("All Items");
-  const products = useSelector((state) => state);
+  // const products = useSelector((state) => state);
+  const products = useSelector((state) => state.allProducts.products);
   const dispatch = useDispatch();
 
   const fetchProducts = async () => {
@@ -57,7 +58,7 @@ export default function ProductList() {
         </Dropdown>
       </div>
       {Object.keys(products).length === 0 ? (
-        <div className="text-center">Loading...</div>
+        <div className="text-center text-primary font-bold">Loading...</div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-6">
           <Product category={category} />
