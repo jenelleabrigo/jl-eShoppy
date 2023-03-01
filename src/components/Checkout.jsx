@@ -28,11 +28,7 @@ export default function Checkout() {
         <p>Total</p>
       </div>
       {cartProduct.map((product) => (
-        <NavLink
-          to={`/product/${product.id}`}
-          key={product.id}
-          className="p-4 w-full grid grid-cols-4 text-center items-center justify-center gap-x-6 [&:not(:last-child)]:border-b [&:not(:last-child)]:pb-4 hover:bg-gray-100"
-        >
+        <div key={product.id} className="p-4 w-full grid grid-cols-4 text-center items-center justify-center gap-x-6 [&:not(:last-child)]:border-b [&:not(:last-child)]:pb-4 ">
           <div className="max-w-[5rem]">
             <img className="rounded-t-lg" src={product.image} alt="" />
           </div>
@@ -45,7 +41,7 @@ export default function Checkout() {
           </div>
           <p>{product.quantity}x</p>
           <h3 className="font-bold">$ {product.price * product.quantity}</h3>
-        </NavLink>
+        </div>
       ))}
       <div className="w-full text-md text-right lg:text-l xl:text-xl font-bold tracking-tight text-primary dark:text-white p-4">
         <p>

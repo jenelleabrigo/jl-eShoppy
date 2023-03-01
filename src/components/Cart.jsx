@@ -36,8 +36,8 @@ function CartItems() {
   return (
     <>
       {cartProduct?.map((product) => (
-        <div className="w-full flex items-center justify-center gap-x-2 [&:not(:last-child)]:border-b [&:not(:last-child)]:pb-4 hover:bg-gray-100">
-          <NavLink to={`/product/${product.id}`} key={product.id} className="flex items-center justify-center gap-x-2" onClick={() => dispatch(toggle())}>
+        <div key={product.id} className="w-full flex items-center justify-center gap-x-2 [&:not(:last-child)]:border-b [&:not(:last-child)]:pb-4 hover:bg-gray-100">
+          <NavLink to={`/product/${product.id}`} className="flex items-center justify-center gap-x-2" onClick={() => dispatch(toggle())}>
             <div className="max-w-[3rem]">
               <img className="rounded-t-lg" src={product.image} alt="" />
             </div>
