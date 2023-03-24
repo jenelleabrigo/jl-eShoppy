@@ -54,7 +54,7 @@ export default function ProductDetail() {
             </div>
             <p className="my-8 leading-normal">{product.description}</p>
             <div className="text-center lg:text-left">
-              <button type="button" className="btn text-center mt-5 block w-full md:w-auto md:inline-block" onClick={() => addToCart(product)}>
+              <button type="button" className="btn text-center mt-5 block w-full md:w-auto md:inline-block active:bg-primary active:text-white" onClick={() => addToCart(product)}>
                 Add to Cart
               </button>
               <div className=" mt-5">

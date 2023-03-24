@@ -45,7 +45,7 @@ function CartItems() {
               <h5 className="mb-1 break-words font-bold tracking-tight text-gray-900 dark:text-white truncate-2">{product.title}</h5>
               <div>
                 <p>{product.category}</p>
-                <h3 className="font-bold">$ {product.price * product.quantity}</h3>
+                <h3 className="font-bold">$ {(product.price * product.quantity).toFixed(3)}</h3>
               </div>
             </div>
             <p>{product.quantity}x</p>

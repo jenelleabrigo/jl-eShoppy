@@ -27,7 +27,11 @@ export default function Product({ category }) {
   };
 
   const addToCart = (product) => {
-    dispatch(cartProducts({ ...product, quantity: 1 }));
+    try {
+      dispatch(cartProducts({ ...product, quantity: 1 }));
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -57,7 +61,7 @@ export default function Product({ category }) {
                 <NavLink to={`/product/${product.id}`} className="btn text-center mr-6 grow">
                   See details
                 </NavLink>
-                <button type="button" className="" onClick={() => addToCart(product)}>
+                <button type="button" className="addToCartBtn" onClick={() => addToCart(product)}>
                   <img src={cart} alt="" />
                 </button>
               </div>
